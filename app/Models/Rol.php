@@ -9,6 +9,10 @@ class Rol extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nombre',
+    ];
+
     public function areas(){
         return $this->belongsToMany(Area::class);
     }

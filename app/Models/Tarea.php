@@ -9,6 +9,13 @@ class Tarea extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'descripcion',
+        'fecha',
+        'heredable',
+    ];
+
     public function areas(){
         return $this->hasMany(Area::class);
     }

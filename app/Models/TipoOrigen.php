@@ -9,6 +9,10 @@ class TipoOrigen extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'tarea_id',
+    ];
+
     protected $table = "tipo_origenes";
 
     public function tarea(){

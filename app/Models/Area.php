@@ -9,6 +9,12 @@ class Area extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'tarea_id',
+        'nombre',
+        'descripcion',
+    ];
+
     public function roles(){
         return $this->belongsToMany(Rol::class);
     }
