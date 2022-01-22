@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class TipoOrigen extends Model
 {
     use HasFactory;
+
+    protected $table = "tipo_origenes";
+
+    public function tarea(){
+        return $this->belongsTo(Tarea::class);
+    }
 }

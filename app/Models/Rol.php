@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Rol extends Model
 {
     use HasFactory;
+
+    public function areas(){
+        return $this->belongsToMany(Area::class);
+    }
 }
