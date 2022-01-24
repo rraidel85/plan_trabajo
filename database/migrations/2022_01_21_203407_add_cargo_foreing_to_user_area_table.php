@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRolForeingToUserAreaTable extends Migration
+class AddCargoForeingToUserAreaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,12 @@ class AddRolForeingToUserAreaTable extends Migration
     public function up()
     {
         Schema::table('user_area', function (Blueprint $table) {
-            $table->unsignedBigInteger('rol_id')
+            $table->unsignedBigInteger('cargo_id')
             ->nullable()->after('area_id');
 
-            $table->foreign('rol_id')
+            $table->foreign('cargo_id')
             ->references('id')
-            ->on('rols')
+            ->on('cargos')
             ->onDelete('SET NULL')
             ->onUpdate('CASCADE');
         });
@@ -33,8 +33,8 @@ class AddRolForeingToUserAreaTable extends Migration
     public function down()
     {
         Schema::table('user_area', function (Blueprint $table) {
-            $table->dropForeign(['rol_id']);
-            $table->dropColumn('rol_id');
+            $table->dropForeign(['cargo_id']);
+            $table->dropColumn('cargo_id');
         });
     }
 }
