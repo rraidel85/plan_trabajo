@@ -5,7 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TipoOrigen extends Model
+class Cargo extends Model
 {
     use HasFactory;
+
+
+    public function user_areas()
+	{
+	    return $this->hasMany(UserArea::class);
+	}
 }

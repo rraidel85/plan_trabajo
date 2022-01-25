@@ -17,7 +17,7 @@ class CreateTareasTable extends Migration
             $table->id();
             $table->text('descripcion');
             $table->dateTime('fecha');
-            $table->boolean('heredable')->default(false);
+            $table->boolean('delegable')->default(false);
             $table->timestamps();
         });
     }

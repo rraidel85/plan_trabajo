@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class TipoOrigenSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +14,8 @@ class TipoOrigenSeeder extends Seeder
      */
     public function run()
     {
-        //
+        User::factory()
+            ->count(5)
+            ->create();
     }
 }
