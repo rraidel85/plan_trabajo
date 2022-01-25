@@ -18,6 +18,8 @@ class CreateUserTareaTable extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('tarea_id');
+            
+            $table->boolean('completada')->default(false);
 
             $table->timestamps();
 
