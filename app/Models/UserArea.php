@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class UserArea extends Pivot
 {
 
+	public $incrementing = true;
     
     public function cargo()
 	{
