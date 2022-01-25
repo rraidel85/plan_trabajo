@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     use HasFactory;
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class,'user_area')
+            ->using(UserArea::class)
+            ->withPivot(['cargo_id']);
+                    
+    }
 }

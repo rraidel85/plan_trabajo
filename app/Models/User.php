@@ -41,4 +41,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function areas()
+    {
+        return $this->belongsToMany(Area::class, 'user_area')
+                ->using(UserArea::class)
+                ->withPivot(['cargo_id']);  
+    }
+
+    public function tareas()
+    {
+        return $this->belongsToMany(Tarea::class, 'user_tarea')
+                    ->withPivot('completada');
+    }
+
+    public function mis_tareas()
+    {
+        return $this->hasMany(Tarea::class,'created_by');
+    }
 }
