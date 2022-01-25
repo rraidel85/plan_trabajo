@@ -27,15 +27,20 @@ class UserTareaSeeder extends Seeder
                 
         //     }
         // }
-
-        $users = User::all()->shuffle();    
-        $tareas = Tarea::all()->shuffle()->toArray();  
         
+        // $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+        // $out->writeln(gettype($tareas));
+        
+        $users = User::all()->shuffle();    
+        $tareas = Tarea::pluck('id')->shuffle()->all();//reordering and converting collection to array
+           
+        
+
         $tareas_copia = $tareas;
 
-        for ($i = 0; $i <= $users->count(); $i++) {
-            for ($j = 0; $j <= 3; $j++) {
-                $users[$i]->tareas->save(array_pop($tareas_copia));  
+        for ($i = 0; $i < $users->count(); $i++) {
+            for ($j = 0; $j < 3; $j++) {
+                $users[$i]->tareas()->attach(array_pop($tareas_copia));  
            }  
            $tareas_copia = $tareas;
         }
