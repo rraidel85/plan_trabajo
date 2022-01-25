@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cargo;
+use App\Models\Tarea;
+use App\Models\UserArea;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            UserSeeder::class,
+            CargoSeeder::class,
+            AreaSeeder::class,
+            TareaSeeder::class,
+            UserTareaSeeder::class,
+            UserAreaSeeder::class,
+        ]);
     }
 }

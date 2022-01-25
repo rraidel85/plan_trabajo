@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Tarea;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class TareaSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class TareaSeeder extends Seeder
      */
     public function run()
     {
-        Tarea::factory()
+        User::factory()
             ->count(5)
             ->create();
     }

@@ -9,6 +9,7 @@ class Cargo extends Model
 {
     use HasFactory;
 
+
     public function user_areas()
 	{
 	    return $this->hasMany(UserArea::class);
